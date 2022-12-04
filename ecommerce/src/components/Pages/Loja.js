@@ -1,12 +1,13 @@
 import React from 'react'
+import { handleCart } from "../Router/Cordinator"
+import { useNavigate } from "react-router-dom";
 import background from "../../img/img.jpg"
 import styled from "styled-components";
 import CardBrinquedos from "../CardBrinquedos"
 import Header from '../Header';
 
-
 export default function Loja({ carrinho, setCarrinho, brinquedos, setBrinquedos }) {
- 
+  const navigate = useNavigate();
 
   function comprar(id) {
     const i = carrinho.findIndex((item) => item.id === id);
@@ -36,12 +37,22 @@ export default function Loja({ carrinho, setCarrinho, brinquedos, setBrinquedos 
 
 
   return (
-    <LojaContainer>
-      <Header/>
-      <BrinquedosContainer>
-        {brinquedosRenderizados}
-      </BrinquedosContainer>
-    </LojaContainer>
+    <>
+      <Header>
+        <button onClick={() => handleCart(navigate)} class="neon-bt" >
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Vá para Carrinho
+        </button>
+      </Header>
+      <LojaContainer>
+        <BrinquedosContainer>
+          {brinquedosRenderizados}
+        </BrinquedosContainer>
+      </LojaContainer>
+    </>
   )
 }
 
@@ -53,7 +64,7 @@ const BrinquedosContainer = styled.section`
   background-image:url(${background});
   background-size: cover;
   background-repeat: no-repeat;
-  padding-top:2rem;
+  padding: 2rem 0;
   
 
 `;

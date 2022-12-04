@@ -12,15 +12,9 @@ import {
   Button
 } from '@chakra-ui/react'
 
-
-
-
 export default function CardBrinquedos({ image, name, price, id, comprar }) {
-
   const priceFormatter = new Intl.NumberFormat('pt-br', {
     style: 'currency', currency: 'BRL',
-
-
     minimumFractionDigits: 0,
     maximumFractionDigits: 0,
   });
@@ -43,7 +37,6 @@ export default function CardBrinquedos({ image, name, price, id, comprar }) {
           <Heading size='md'>{name}</Heading>
           <Text>
           A Linha Jornada Espacial é ideal para deixar a imaginação a solta.
-          
           </Text>
           <Text color='blue.600' fontSize='2xl'>
             {priceFormatter.format(price)}
@@ -56,7 +49,6 @@ export default function CardBrinquedos({ image, name, price, id, comprar }) {
           <Button onClick={() => comprar(id)} variant='solid' colorScheme='blue'>
             Comprar
           </Button>
-
         </ButtonGroup>
       </CardFooter>
     </Card>
