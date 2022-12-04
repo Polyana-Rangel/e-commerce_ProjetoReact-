@@ -6,9 +6,18 @@ import styled from "styled-components";
 
 
 const Header = () => {
+   
     const navigate = useNavigate();
   return (
     <HeaderContainer>
+{/* 
+<div>
+
+<input placeholder="Pesquisar" />
+<button>
+</button>
+ </div> */}
+
         <h1 >Jornada Espacial <span  >👽👾👩‍🚀⚗️ </span></h1>
         <a onClick={() => handleCart(navigate)} class="neon-bt" >
 
@@ -32,10 +41,13 @@ export default Header
 
 const HeaderContainer = styled.header`
 padding:0 2rem;
-display: flex;
-justify-content: space-between;
+/* display: flex;
+flex-direction: column;
+justify-content: space-between; */
+
 width: 100%;
 background-color:	#101010; 
+height: 230px;
 
 
 h1{
@@ -46,6 +58,22 @@ h1{
     justify-content: center;
     margin:0;
     color: #03e9f4;
+
+
+    background: #03e9f4;
+
+color: black;
+
+border-radius: 50%;
+
+box-shadow: 0 0 5px #03e9f4,
+
+            0 0 25px #03e9f4,
+
+            0 0 50px #03e9f4,
+
+            0 0 105px #03e9f4;
+
     
 }
 button{

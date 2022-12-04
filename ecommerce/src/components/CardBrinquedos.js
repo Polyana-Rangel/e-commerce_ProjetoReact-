@@ -42,9 +42,8 @@ export default function CardBrinquedos({ image, name, price, id, comprar }) {
         <Stack mt='6' spacing='3'>
           <Heading size='md'>{name}</Heading>
           <Text>
-            This sofa is perfect for modern tropical spaces, baroque inspired
-            spaces, earthy toned spaces and for people who love a chic design with a
-            sprinkle of vintage design.
+          A Linha Jornada Espacial é ideal para deixar a imaginação a solta.
+          
           </Text>
           <Text color='blue.600' fontSize='2xl'>
             {priceFormatter.format(price)}
