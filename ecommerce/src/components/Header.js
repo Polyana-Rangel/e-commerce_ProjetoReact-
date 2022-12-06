@@ -1,7 +1,10 @@
 import React from 'react'
 import styled from "styled-components";
 
+
 const Header = ({ children }) => {
+
+
   return (
     <HeaderContainer>
       <HeaderTitle>
@@ -10,6 +13,7 @@ const Header = ({ children }) => {
       </HeaderTitle>
       
       <HeaderBody>
+   
         {children}
       </HeaderBody>
     </HeaderContainer>
@@ -51,9 +55,10 @@ const HeaderTitle = styled.div`
 
 const HeaderBody = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   margin-top: 2rem;
   padding-bottom: 1rem;
+
 
   .neon-bt {
     position: relative;
