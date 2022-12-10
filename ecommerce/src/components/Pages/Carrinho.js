@@ -5,44 +5,21 @@ import CardCarrinho from '../CardCarrinho';
 import { handleHome } from "../Router/Cordinator"
 import background from "../../img/img.jpg"
 import Header from '../Header';
+import { useCart } from '../../contexts/cartContext';
 
 
-export default function Carrinho({ carrinho, setCarrinho }) {
+export default function Carrinho() {
   const navigate = useNavigate();
+  const { brinquedos, totalPrice, decrement } = useCart();
 
-  let preçoTotal = 0;
-
-  carrinho.map((item) => (preçoTotal = preçoTotal + item.price * item.amount));
-
-  function remover(id) {
-    const brinquedo = carrinho && carrinho.find((item) => item.id === id);
-    console.log(brinquedo);
-
-    if (brinquedo.amount > 1) {
-      const novoCarrinho = carrinho.map((item) => {
-        if (brinquedo.id === item.id && item.amount >= 1) {
-          return { ...item, amount: item.amount - 1 };
-        } else {
-          return item;
-        }
-      });
-
-      setCarrinho(novoCarrinho);
-    } else {
-
-      const carrinhoSemItem = carrinho.filter((item) => item.id !== id);
-      setCarrinho(carrinhoSemItem);
-    }
-  }
-
-  const carrrinhoRenderizado = carrinho.map((item) => {
+  const carrrinhoRenderizado = brinquedos.map((item) => {
     return <CardCarrinho
       key={item.id}
       id={item.id}
       url={item.url}
       name={item.name}
       amount={item.amount}
-      deleteItem={remover}
+      deleteItem={decrement}
       price={item.price}></CardCarrinho>
   })
 
@@ -59,14 +36,13 @@ export default function Carrinho({ carrinho, setCarrinho }) {
       </Header>
 
       <CarrinhoBody>
-        <h3>Preço Total: R$ {preçoTotal}</h3>
-        
+        <h3>Preço Total: R$ {totalPrice}</h3>
+
         <CarrinhoContainer>
           {carrrinhoRenderizado}
         </CarrinhoContainer>
       </CarrinhoBody>
     </>
-
   )
 }
 

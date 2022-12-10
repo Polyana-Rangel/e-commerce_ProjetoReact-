@@ -59,7 +59,6 @@ const HeaderBody = styled.div`
   margin-top: 2rem;
   padding-bottom: 1rem;
 
-
   .neon-bt {
     position: relative;
     display: inline-block;

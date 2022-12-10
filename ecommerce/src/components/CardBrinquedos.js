@@ -20,13 +20,6 @@ export default function CardBrinquedos({ image, name, price, id, comprar }) {
   });
 
   return (
-    // <CardContainer>
-    //   <Image src={image} alt={name} />
-    //   <p>{name}</p>
-    //   <span>{priceFormatter.format(price)}</span>
-    //   <button onClick={()=>comprar(id)}>Comprar</button>
-    // </CardContainer>
-
     <Card maxW='sm'>
       <CardBody backgroundColor={"white"}>
         <Image

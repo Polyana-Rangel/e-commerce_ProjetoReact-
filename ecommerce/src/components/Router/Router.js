@@ -5,8 +5,6 @@ import Loja from "../Pages/Loja"
 import estoque from "../../estoque.json"
 
 export default function Router() {
-
-    const [carrinho, setCarrinho] = useState([])
     const [brinquedos, setBrinquedos] = useState(estoque.brinquedos);
 
     return (
@@ -14,13 +12,12 @@ export default function Router() {
             <Routes>
                 <Route
                     path="/"
-                    element={<Loja carrinho={carrinho} setCarrinho={setCarrinho} brinquedos={brinquedos} setBrinquedos={setBrinquedos} />}
+                    element={<Loja brinquedos={brinquedos} />}
                 />
                 <Route
                     path="/cart"
-                    element={<Carrinho carrinho={carrinho} setCarrinho={setCarrinho} />}
+                    element={<Carrinho />}
                 />
-
             </Routes>
         </BrowserRouter>
     )
